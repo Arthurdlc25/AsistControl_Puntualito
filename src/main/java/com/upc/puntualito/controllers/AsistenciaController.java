@@ -8,23 +8,23 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api")
 public class AsistenciaController {
     @Autowired
-    IAsistenciaService asistenciaService;
+    private IAsistenciaService iAsistenciaService;
 
     @PostMapping("/asistencia")
-    public AsistenciaDTO registrar(AsistenciaDTO asistenciaDTO){
-        return asistenciaService.registrar(asistenciaDTO);
+    public AsistenciaDTO registrar(@RequestBody AsistenciaDTO asistenciaDTO){
+        return iAsistenciaService.registrar(asistenciaDTO);
     }
 
     @PutMapping("/asistencia")
-    public AsistenciaDTO actualizar(AsistenciaDTO asistenciaDTO){
-        return asistenciaService.actualizar(asistenciaDTO);
+    public AsistenciaDTO actualizar(@RequestBody AsistenciaDTO asistenciaDTO){
+        return iAsistenciaService.actualizar(asistenciaDTO);
     }
 
     @GetMapping("/asistencias")
     public List<AsistenciaDTO> listarAsistencias(){
-        return asistenciaService.listarAsistencias();
+        return iAsistenciaService.listarAsistencias();
     }
 }
