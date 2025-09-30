@@ -28,8 +28,11 @@ public class Asistencia {
     @Column(name = "horaentrada", nullable = false)
     private Instant horaEntrada;
 
-    @Column(name = "horasalida", nullable = false)
+    @Column(name = "horasalida")
     private Instant horaSalida;
+
+    @Column(name = "estado")
+    private String estado;
 
     @Column(name = "latitudentrada", nullable = false, precision = 11, scale = 8)
     private BigDecimal latitudEntrada;
@@ -52,16 +55,16 @@ public class Asistencia {
     @Column(name = "eseliminado", nullable = false)
     private Boolean esEliminado = false;
 
-    @Column(name = "creadopor", nullable = false, length = 100)
+    @Column(name = "creadopor", length = 100)
     private String creadoPor;
 
-    @Column(name = "creadoen", nullable = false)
+    @Column(name = "creadoen")
     private Instant creadoEn;
 
-    @Column(name = "modificadopor", nullable = false, length = 100)
+    @Column(name = "modificadopor", length = 100)
     private String modificadoPor;
 
-    @Column(name = "modificadoen", nullable = false)
+    @Column(name = "modificadoen")
     private Instant modificadoEn;
 
 }

@@ -18,7 +18,7 @@ public class HorarioTrabajo {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "empleado_id", nullable = false)
+    @JoinColumn(name = "empleado_id", nullable = false, unique = true)
     private Empleado empleado;
 
     @Column(name = "nombrehorario", nullable = false, length = 100)

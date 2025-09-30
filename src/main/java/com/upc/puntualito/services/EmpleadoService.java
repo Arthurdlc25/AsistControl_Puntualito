@@ -3,11 +3,9 @@ package com.upc.puntualito.services;
 import com.upc.puntualito.dto.EmpleadoDTO;
 import com.upc.puntualito.entities.Empleado;
 import com.upc.puntualito.entities.Empresa;
-import com.upc.puntualito.entities.UsuarioSistema;
 import com.upc.puntualito.interfaces.IEmpleadoService;
 import com.upc.puntualito.repositories.EmpleadoRepository;
 import com.upc.puntualito.repositories.EmpresaRepository;
-import com.upc.puntualito.repositories.UsuarioSistemaRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,7 +37,7 @@ public class EmpleadoService implements IEmpleadoService {
         }
 
 
-        //guardar Empleado + Creacion de usuario sistema
+        //guardar Empleado
         if(empleadoDTO.getId()==null){
 
             Empleado empleado = modelMapper.map(empleadoDTO, Empleado.class);
