@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.Instant;
 import java.time.LocalDate;
 
 @Setter
@@ -23,7 +24,7 @@ public class EmpresaDTO {
     private Integer maximoEmpleado;
     private Boolean esEliminado = false;
     private String creadoPor;
-    private LocalDate creadoEn;
-    private String modificadorPor;
-    private LocalDate modificadoEn;
+    private Instant creadoEn;
+    private String modificadoPor;
+    private Instant modificadoEn;
 }

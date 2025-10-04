@@ -40,10 +40,10 @@ public class Asistencia {
     @Column(name = "longitudentrada", nullable = false, precision = 11, scale = 8)
     private BigDecimal longitudEntrada;
 
-    @Column(name = "latiudsalida", nullable = false, precision = 11, scale = 8)
+    @Column(name = "latiudsalida", precision = 11, scale = 8)
     private BigDecimal latiudSalida;
 
-    @Column(name = "longitudsalida", nullable = false, precision = 11, scale = 8)
+    @Column(name = "longitudsalida", precision = 11, scale = 8)
     private BigDecimal longitudSalida;
 
     @Column(name = "validacionbiometrica", nullable = false)

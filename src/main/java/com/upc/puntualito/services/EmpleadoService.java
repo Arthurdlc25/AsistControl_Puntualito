@@ -10,6 +10,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.Instant;
+
 @Service
 public class EmpleadoService implements IEmpleadoService {
     @Autowired
@@ -41,6 +43,35 @@ public class EmpleadoService implements IEmpleadoService {
         if(empleadoDTO.getId()==null){
 
             Empleado empleado = modelMapper.map(empleadoDTO, Empleado.class);
+
+            empleado.setCreadoPor("sistema");
+            empleado.setCreadoEn(Instant.now());
+
+            empleado.setModificadoPor(null);
+            empleado.setModificadoEn(null);
+
+            empleadoRepository.save(empleado);
+            return modelMapper.map(empleado, EmpleadoDTO.class);
+        }
+        return null;
+    }
+
+    @Override
+    public EmpleadoDTO actualizar(EmpleadoDTO empleadoDTO) {
+        //valida DNI unico
+        if(empleadoRepository.existsByDni(empleadoDTO.getDni())) {
+            throw new IllegalArgumentException("El DNI ya está registrado");
+        }
+
+
+        //guardar Empleado
+        if(empleadoDTO.getId()==null){
+
+            Empleado empleado = modelMapper.map(empleadoDTO, Empleado.class);
+
+            empleado.setModificadoPor("sistema");
+            empleado.setModificadoEn(Instant.now());
+
             empleadoRepository.save(empleado);
             return modelMapper.map(empleado, EmpleadoDTO.class);
         }

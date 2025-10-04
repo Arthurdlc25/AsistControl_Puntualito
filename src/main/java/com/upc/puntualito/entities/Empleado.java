@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.Instant;
 import java.time.LocalDate;
 
 @Getter
@@ -48,16 +49,16 @@ public class Empleado {
     @Column(name = "fotoperfilurl", nullable = false, length = 100)
     private String fotoPerfilUrl;
 
-    @Column(name = "creadopor", nullable = false)
+    @Column(name = "creadopor")
     private String creadoPor;
 
-    @Column(name = "creadoen", nullable = false)
-    private LocalDate creadoEn;
+    @Column(name = "creadoen")
+    private Instant creadoEn;
 
-    @Column(name = "modificadopor", nullable = false, length = 100)
+    @Column(name = "modificadopor", length = 100)
     private String modificadoPor;
 
-    @Column(name = "modificadoen", nullable = false)
-    private LocalDate modificadoEn;
+    @Column(name = "modificadoen")
+    private Instant modificadoEn;
 
 }
