@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
@@ -39,16 +40,16 @@ public class HorarioTrabajo {
     @Column(name = "eseliminado", nullable = false)
     private Boolean esEliminado = false;
 
-    @Column(name = "creadopor", nullable = false, length = 100)
+    @Column(name = "creadopor", length = 100)
     private String creadoPor;
 
-    @Column(name = "creadoen", nullable = false)
-    private LocalDate creadoEn;
+    @Column(name = "creadoen")
+    private Instant creadoEn;
 
-    @Column(name = "modificadopor", nullable = false, length = 100)
+    @Column(name = "modificadopor", length = 100)
     private String modificadoPor;
 
-    @Column(name = "modificadoen", nullable = false)
-    private LocalDate modificadoEn;
+    @Column(name = "modificadoen")
+    private Instant modificadoEn;
 
 }

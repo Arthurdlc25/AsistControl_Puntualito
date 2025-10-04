@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.Instant;
 import java.time.LocalDate;
 
 @Getter
@@ -43,16 +44,16 @@ public class Empresa {
     @Column(name = "eseliminado", nullable = false)
     private Boolean esEliminado = false;
 
-    @Column(name = "creadopor", nullable = false)
+    @Column(name = "creadopor")
     private String creadoPor;
 
-    @Column(name = "creadoen", nullable = false)
-    private LocalDate creadoEn;
+    @Column(name = "creadoen")
+    private Instant creadoEn;
 
-    @Column(name = "modificadorpor", nullable = false)
-    private String modificadorPor;
+    @Column(name = "modificadorpor")
+    private String modificadoPor;
 
-    @Column(name = "modificadoen", nullable = false)
-    private LocalDate modificadoEn;
+    @Column(name = "modificadoen")
+    private Instant modificadoEn;
 
 }

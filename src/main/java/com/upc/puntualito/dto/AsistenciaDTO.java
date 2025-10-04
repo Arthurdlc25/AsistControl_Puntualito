@@ -20,6 +20,7 @@ public class AsistenciaDTO {
     private LocalDate fechaRegistro;
     private Instant horaEntrada;
     private Instant horaSalida;
+    private String estado;
     private BigDecimal latitudEntrada;
     private BigDecimal longitudEntrada;
     private BigDecimal latiudSalida;

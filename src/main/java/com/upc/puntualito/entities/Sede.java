@@ -48,16 +48,16 @@ public class Sede {
     @Column(name = "eseliminado", nullable = false)
     private Boolean esEliminado = false;
 
-    @Column(name = "creadopor", nullable = false)
+    @Column(name = "creadopor")
     private String creadoPor;
 
-    @Column(name = "creandoen", nullable = false)
+    @Column(name = "creandoen")
     private LocalDate creandoEn;
 
-    @Column(name = "modificadopor", nullable = false)
+    @Column(name = "modificadopor")
     private String modificadoPor;
 
-    @Column(name = "modificadoen", nullable = false)
+    @Column(name = "modificadoen")
     private LocalDate modificadoEn;
 
 }
